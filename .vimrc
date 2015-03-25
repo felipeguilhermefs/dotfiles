@@ -8,12 +8,15 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 
 " ==========================================================
 " Basic Settings
 " ==========================================================
+let mapleader=";" " change the leader to be a comma vs slash
+
 syntax on
 filetype on
 filetype plugin indent on "plugin and indentation by filetype
@@ -29,7 +32,6 @@ set ls=2 " Always show statusline, even if only 1 window.
 set statusline=%F%m%r%h%w\ [POS=%04l,%04v\ %p%%\ %L]
 set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
-set wildmode=full " <Tab> cycles between all matching choices.
 
 """ Format
 set tabstop=4 "how many spaces a tab take
@@ -100,3 +102,7 @@ au FileType py set textwidth=79 " PEP8
 """ Solarized
 set background=dark
 colorscheme solarized
+
+""" NERDTree
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+map <leader>n :NERDTreeToggle<CR>
