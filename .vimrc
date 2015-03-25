@@ -9,13 +9,14 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
 
 call vundle#end()
 
 " ==========================================================
 " Basic Settings
 " ==========================================================
-let mapleader=";" " change the leader to be a comma vs slash
+let mapleader=";" " change the leader to be a semicolon
 
 syntax on
 filetype on
@@ -29,7 +30,6 @@ set report=0 " : commands always print changed line count.
 set shortmess+=a " Use [+]/[RO]/[w] for modified/readonly/written.
 set ruler " Show some info, even without statuslines.
 set ls=2 " Always show statusline, even if only 1 window.
-set statusline=%F%m%r%h%w\ [POS=%04l,%04v\ %p%%\ %L]
 set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
 
@@ -106,3 +106,7 @@ colorscheme solarized
 """ NERDTree
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 map <leader>n :NERDTreeToggle<CR>
+
+""" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='molokai'
