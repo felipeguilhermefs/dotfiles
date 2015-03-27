@@ -10,13 +10,14 @@ Plugin 'gmarik/vundle'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 
 " ==========================================================
 " Basic Settings
 " ==========================================================
-let mapleader=";" " change the leader to be a semicolon
+let mapleader=";" " change the leader to be a comma vs slash
 
 syntax on
 filetype on
@@ -27,7 +28,6 @@ filetype plugin indent on "plugin and indentation by filetype
 set vb t_vb= " Disable all bells.
 set confirm " Y-N-C prompt if closing with unsaved changes.
 set report=0 " : commands always print changed line count.
-set shortmess+=a " Use [+]/[RO]/[w] for modified/readonly/written.
 set ruler " Show some info, even without statuslines.
 set ls=2 " Always show statusline, even if only 1 window.
 set title " show title in console title bar
@@ -50,7 +50,7 @@ set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅ "help find incorrect chars
 
 """ Spelling
 set nospell
-set spelllang=en,pt
+set spelllang=en
 set spellsuggest=5
 
 """ Moving Around/Editing
@@ -59,18 +59,13 @@ set nu "add line numbers
 set scrolloff=3 " Keep 3 context lines above and below the cursor
 set cursorline " have a line indicate the cursor location
 set completeopt=menuone,longest,preview
-set pumheight=6 " Keep a small completion window
 set splitbelow " Horizontal splits open below current file
 set splitright " Vertical splits open to the right of the current file
-set history=50 "keep 50 lines of command line history
 
 """" Reading/Writing
 set encoding=utf8
 set noautowrite " Never write a file unless I request it.
 set noautowriteall " NEVER.
-set noautoread " Don't automatically re-read changed files.
-set modeline " Allow vim options to be embedded in files;
-set modelines=5 " they must be within the first or last 5 lines.
 set ffs=unix,dos,mac " Try recognizing dos, unix, and mac line endings.
 
 """ Searching and Patterns
@@ -94,7 +89,6 @@ au FileType py set autoindent "indent the next line
 au FileType py set smartindent "indent after if, for ...
 au FileType py set textwidth=79 " PEP8
 
-
 " ==========================================================
 " Plugins
 " ==========================================================
@@ -110,3 +104,11 @@ map <leader>n :NERDTreeToggle<CR>
 """ Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='molokai'
+
+""" Jedi
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>u"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "<leader>r"
