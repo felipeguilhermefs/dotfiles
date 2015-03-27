@@ -17,7 +17,7 @@ call vundle#end()
 " ==========================================================
 " Basic Settings
 " ==========================================================
-let mapleader=";" " change the leader to be a comma vs slash
+let mapleader=";" " change the leader to be a semicolon
 
 syntax on
 filetype on
