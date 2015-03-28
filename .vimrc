@@ -60,7 +60,6 @@ set virtualedit=block " Let cursor move past the last char in <C-v> mode
 set nu "add line numbers
 set scrolloff=3 " Keep 3 context lines above and below the cursor
 set cursorline " have a line indicate the cursor location
-set completeopt=menuone,longest,preview
 set splitbelow " Horizontal splits open below current file
 set splitright " Vertical splits open to the right of the current file
 
