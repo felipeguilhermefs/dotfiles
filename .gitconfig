@@ -1,0 +1,15 @@
+[alias]
+	co = checkout
+	dev = checkout develop
+	mas = checkout master
+	ci = commit
+	cp = cherry-pick
+	lg = log --oneline --decorate
+	st = status -uno
+	amend = commit --amend
+	br = branch
+	unstage = reset HEAD
+	tree = log --oneline --decorate --graph
+	ticket = log --no-merges --oneline --format="%s" --grep"#[0-9]"
+[push]
+	default = simple
