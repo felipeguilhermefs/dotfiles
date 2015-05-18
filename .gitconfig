@@ -11,5 +11,9 @@
 	unstage = reset HEAD
 	tree = log --oneline --decorate --graph
 	ticket = log --no-merges --oneline --format="%s" --grep"#[0-9]"
+	pl = pull --rebase
+	rb = rebase
+	rbc = rebase --continue
+	rba = rebase --abort
 [push]
 	default = simple
