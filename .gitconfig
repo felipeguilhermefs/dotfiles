@@ -15,5 +15,6 @@
 	rb = rebase
 	rbc = rebase --continue
 	rba = rebase --abort
+	cmp = cherry -v
 [push]
 	default = simple
