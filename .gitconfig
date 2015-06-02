@@ -18,5 +18,23 @@
 	rbc = rebase --continue
 	rba = rebase --abort
 	cmp = cherry -v
+[color]
+	ui=true
+	interactive=true
+[color "branch"]
+	current=green bold
+	local=yellow bold
+	remote=cyan bold
+[color "diff"]
+	meta=yellow bold
+	frag=magenta bold
+	old=red bold
+	new=green bold
+	whitespace=white reverse
+[color "status"]
+	added=green bold
+	changed=yellow bold
+	untracked=red bold
+	branch=cyan bold
 [push]
 	default = simple
