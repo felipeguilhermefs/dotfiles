@@ -11,8 +11,7 @@
 	unstage = reset HEAD
 	tree = log --oneline --decorate --graph
 	ticket = log --no-merges --oneline --format="%s" --grep="#[0-9]"
-	plr = pull --rebase
-	pullup = pull --rebase upstream
+	pullup = pull upstream
 	pushor = push origin
 	rb = rebase
 	rbc = rebase --continue
@@ -38,3 +37,5 @@
 	branch=cyan bold
 [push]
 	default = simple
+[branch]
+	autosetuprebase = always
