@@ -10,12 +10,12 @@
 	br = branch
 	unstage = reset HEAD
 	tree = log --oneline --decorate --graph
-	ticket = log --no-merges --oneline --format="%s" --grep="#[0-9]"
-	pullup = pull upstream
-	pushor = push origin
+	ticket = log --oneline --format="%s" --grep="#[0-9]{5}"
+	pullup = pull --rebase upstream
 	rb = rebase
 	rbc = rebase --continue
 	rba = rebase --abort
+	rbi = rebase -i
 	cmp = cherry -v
 [color]
 	ui=true
