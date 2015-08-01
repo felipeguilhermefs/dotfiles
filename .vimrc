@@ -10,9 +10,6 @@ Plugin 'gmarik/vundle'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 
 call vundle#end()
 
@@ -36,13 +33,14 @@ set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
 
 """ Format
-set tabstop=4 "how many spaces a tab take
-set shiftwidth=4 "the depth of autoindentation, keep the same as above
+set tabstop=2 "how many spaces a tab take
+set shiftwidth=2 "the depth of autoindentation, keep the same as above
 set shiftround "indent in multiples of shiftwidth
-set softtabstop=4 " <BS> over an autoindent deletes both spaces.
+set softtabstop=2 " <BS> over an autoindent deletes both spaces.
 set expandtab "tabs to spaces
 set nowrap " don't wrap text
 set linebreak " don't wrap textin the middle of a word
+set textwidth=79
 set autoindent " always set autoindenting on
 set smartindent " use smart indent if there is no indent file
 set matchpairs+=<:> " show matching <> (html mainly) as well
@@ -86,16 +84,14 @@ map<c-k> <c-w>k
 map<c-l> <c-w>l
 map<c-h> <c-w>h
 
-au FileType py set autoindent "indent the next line
-au FileType py set smartindent "indent after if, for ...
-au FileType py set textwidth=79 " PEP8
-
 " ==========================================================
 " Plugins
 " ==========================================================
 
 """ Solarized
 set background=dark
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
 colorscheme solarized
 
 """ NERDTree
@@ -104,13 +100,4 @@ map <leader>n :NERDTreeToggle<CR>
 
 """ Airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='molokai'
-
-""" Jedi
-let g:jedi#usages_command = "<leader>u"
-let g:jedi#force_py_version = 3
-
-""" UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:airline_theme='badwolf'
