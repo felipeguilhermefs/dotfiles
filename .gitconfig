@@ -8,7 +8,6 @@
   st = status -uno
   amend = commit --amend
   br = branch
-  unstage = reset HEAD
   tree = log --oneline --decorate --graph
   ticket = log --oneline --format="%s" --grep="#[0-9]{5}"
   pullup = pull --rebase upstream
@@ -17,6 +16,10 @@
   rba = rebase --abort
   rbi = rebase -i
   cmp = cherry -v
+  spop = "!sh -c 'git stash pop stash@{$1}' -"
+  sdrop = "!sh -c 'git stash drop stash@{$1}' -"
+  sl = stash list
+
 [color]
   ui=true
   interactive=true
