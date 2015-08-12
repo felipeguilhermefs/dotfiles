@@ -19,7 +19,6 @@
   spop = "!sh -c 'git stash pop stash@{$1}' -"
   sdrop = "!sh -c 'git stash drop stash@{$1}' -"
   sl = stash list
-
 [color]
   ui=true
   interactive=true
@@ -44,3 +43,5 @@
   autosetuprebase = always
 [core]
   editor = vim
+[commit]
+  template = ~/.gitmessage

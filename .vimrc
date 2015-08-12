@@ -75,6 +75,13 @@ set hlsearch " Highlight searches by default.
 set incsearch " Incrementally search while typing a /regex
 
 " ==========================================================
+" Typed Config
+" ==========================================================
+
+" Git
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
+" ==========================================================
 " Key Mapping
 " ==========================================================
 
