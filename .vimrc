@@ -10,6 +10,9 @@ Plugin 'gmarik/vundle'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompletMe'
 
 call vundle#end()
 
@@ -38,7 +41,6 @@ set shiftwidth=2 "the depth of autoindentation, keep the same as above
 set shiftround "indent in multiples of shiftwidth
 set softtabstop=2 " <BS> over an autoindent deletes both spaces.
 set expandtab "tabs to spaces
-set nowrap " don't wrap text
 set linebreak " don't wrap textin the middle of a word
 set textwidth=79
 set autoindent " always set autoindenting on
