@@ -9,8 +9,9 @@
   amend = commit --amend
   br = branch
   tree = log --oneline --decorate --graph
-  ticket = log --oneline --format="%s" --grep="#[0-9]{5}"
-  pullup = pull --rebase upstream
+  ticket = "!sh -c 'git log $1..$2 | grep -o "\""#[0-9]\\{5\\}"\"" | sort -u' -"
+  pud = pull --rebase upstream develop
+  pum = pull --rebase upstream master
   rb = rebase
   rbc = rebase --continue
   rba = rebase --abort
@@ -19,6 +20,8 @@
   spop = "!sh -c 'git stash pop stash@{$1}' -"
   sdrop = "!sh -c 'git stash drop stash@{$1}' -"
   sl = stash list
+  cll = "!git branch --merged | grep -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+  clr = "!git branch -r --merged | grep -v '\\*\\|master\\|develop' | sed 's/origin\\//:/' | xargs -n 1 git push origin"
 [color]
   ui=true
   interactive=true
@@ -37,11 +40,21 @@
   changed=yellow bold
   untracked=red bold
   branch=cyan bold
+[merge]
+  tool = vimdiff
 [push]
   default = simple
 [branch]
   autosetuprebase = always
 [core]
   editor = vim
+  preloadindex = true
+  fscache = true
 [commit]
   template = ~/.gitmessage
+[gc]
+  auto = 256
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
