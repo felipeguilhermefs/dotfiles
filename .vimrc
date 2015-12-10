@@ -52,8 +52,6 @@ set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅ "help find incorrect chars
 
 """ Spelling
 set nospell
-set spelllang=en
-set spellsuggest=5
 
 """ Moving Around/Editing
 set virtualedit=block " Let cursor move past the last char in <C-v> mode
@@ -81,7 +79,7 @@ set incsearch " Incrementally search while typing a /regex
 " ==========================================================
 
 " Git
-autocmd Filetype gitcommit setlocal spell textwidth=72
+autocmd Filetype gitcommit setlocal textwidth=72
 
 " ==========================================================
 " Key Mapping
