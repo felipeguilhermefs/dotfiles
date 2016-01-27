@@ -31,7 +31,7 @@
   ui=true
   interactive=true
 [merge]
-  tool = vimdiff
+  tool = meld
 [push]
   default = simple
 [branch]
