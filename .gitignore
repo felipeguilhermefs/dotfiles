@@ -1,2 +1,6 @@
-# Ignore swap files
-*.swp
+.DS_Store
+*.sw[nop]
+.bundle
+.env
+*.pyc
+*.pyo
