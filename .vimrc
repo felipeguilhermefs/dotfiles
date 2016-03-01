@@ -11,7 +11,8 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes' 
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompletMe'
@@ -110,3 +111,9 @@ map <leader>n :NERDTreeToggle<CR>
 """ Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='badwolf'
+
+"" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_working_path_mode = 'ra'
