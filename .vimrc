@@ -94,6 +94,12 @@ map<c-k> <c-w>k
 map<c-l> <c-w>l
 map<c-h> <c-w>h
 
+" Buffer Control
+
+map<leader>n :bn<cr>
+map<leader>p :bp<cr>
+map<leader>d :bd<cr>
+
 " ==========================================================
 " Plugins
 " ==========================================================
