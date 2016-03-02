@@ -112,7 +112,7 @@ colorscheme solarized
 
 """ NERDTree
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
-map <leader>n :NERDTreeToggle<CR>
+map <leader>t :NERDTreeToggle<CR>
 
 """ Airline
 let g:airline#extensions#tabline#enabled = 1
