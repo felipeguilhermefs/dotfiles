@@ -8,8 +8,8 @@
   co = checkout
   dev = checkout develop
   mas = checkout master
-  st = status
-  stu = status -uno
+  st = status -uno
+  stu = status
   br = branch
   bra = branch -a
   lg = log --oneline --decorate
