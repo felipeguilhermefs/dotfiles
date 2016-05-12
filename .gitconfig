@@ -1,7 +1,8 @@
 [alias]
   c = commit
   cm = commit -m
-  ca = commit --amend
+  ca = commit --amend --no-edit
+  cam = commit --amend
   cp = cherry-pick
   cmp = cherry -v
   co = checkout
@@ -10,6 +11,7 @@
   st = status
   stu = status -uno
   br = branch
+  bra = branch -a
   lg = log --oneline --decorate
   tree = log --oneline --decorate --graph
   pud = pull --rebase upstream develop
