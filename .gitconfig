@@ -1,8 +1,4 @@
 [alias]
-  c = commit
-  cm = commit -m
-  ca = commit --amend --no-edit
-  cam = commit --amend
   cp = cherry-pick
   cmp = cherry -v
   co = checkout
