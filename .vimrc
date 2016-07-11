@@ -13,8 +13,6 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompletMe'
 
 call vundle#end()
