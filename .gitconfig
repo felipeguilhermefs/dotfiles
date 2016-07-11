@@ -6,8 +6,6 @@
   mas = checkout master
   st = status -uno
   stu = status
-  br = branch
-  bra = branch -a
   lg = log --oneline --decorate
   tree = log --oneline --decorate --graph
   pud = pull --rebase upstream develop
