@@ -1,2 +1,4 @@
 'atom-text-editor':
   'ctrl-y': 'editor:delete-line'
+  'alt-j': 'find-and-replace:select-next'
+  'alt-shift-J': 'find-and-replace:select-all'
