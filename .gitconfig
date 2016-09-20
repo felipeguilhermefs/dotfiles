@@ -23,8 +23,6 @@
   ticket = "!sh -c 'git log $1..$2 | grep -o "\""#[0-9]\\{5\\}"\"" | sort -u' -"
   cll = "!git branch --merged | grep -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
   clr = "!git branch -r --merged | grep -v '\\*\\|master\\|develop' | sed 's/origin\\//:/' | xargs -n 1 git push origin"
-  gc = gc --prune=now
-  gca = gc --aggressive --prune=now
 [color]
   ui=true
   interactive=true
