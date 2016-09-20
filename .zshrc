@@ -85,3 +85,6 @@ export EDITOR='vim'
 
 # Git alias
 alias gau='git add --update'
+
+alias ggc='git gc'
+alias ggca='git gc --aggressive'
