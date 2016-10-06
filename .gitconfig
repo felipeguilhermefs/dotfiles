@@ -1,28 +1,9 @@
 [alias]
-  cp = cherry-pick
   cmp = cherry -v
-  co = checkout
-  dev = checkout develop
-  mas = checkout master
-  st = status -uno
-  stu = status
   lg = log --oneline --decorate
   tree = log --oneline --decorate --graph
-  pud = pull --rebase upstream develop
-  pum = pull --rebase upstream master
-  rb = rebase
-  rbc = rebase --continue
-  rba = rebase --abort
-  rbi = rebase -i
   undo = reset --hard
-  d = diff
-  dc = diff --cached
-  sl = stash list
-  spop = "!sh -c 'git stash pop stash@{$1}' -"
-  sdrop = "!sh -c 'git stash drop stash@{$1}' -"
   ticket = "!sh -c 'git log $1..$2 | grep -o "\""#[0-9]\\{5\\}"\"" | sort -u' -"
-  cll = "!git branch --merged | grep -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
-  clr = "!git branch -r --merged | grep -v '\\*\\|master\\|develop' | sed 's/origin\\//:/' | xargs -n 1 git push origin"
 [color]
   ui=true
   interactive=true
