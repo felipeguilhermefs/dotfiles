@@ -84,8 +84,6 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Git alias
-alias gau='git add --update'
-
 alias ggc='git gc'
 alias ggc!='git gc --prune=now'
 alias ggca='git gc --aggressive'
