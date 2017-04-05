@@ -12,6 +12,11 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 
 # Aliases
+alias gc='git commit -v -S'
+alias gc!='git commit -v -S --amend'
+alias gcmsg='git commit -S -m'
+alias gcn!='git commit -v -S --amend --no-edit'
+
 alias ggc='git gc'
 alias ggc!='git gc --prune=now'
 alias ggca='git gc --aggressive'
