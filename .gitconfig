@@ -27,3 +27,5 @@
   smudge = git-lfs smudge %f
 [rebase]
   autostash = true
+[rerere]
+  enabled = true
