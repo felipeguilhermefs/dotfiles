@@ -21,3 +21,5 @@ alias ggc='git gc'
 alias ggc!='git gc --prune=now'
 alias ggca='git gc --aggressive'
 alias ggca!='git gc --aggressive --prune=now'
+
+alias ggrr!='git branch --no-color -r --merged | command grep -v "master\|develop\|dev" | command sed "s/origin\//:/" | xargs -n 1 git push origin'
