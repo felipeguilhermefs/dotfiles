@@ -62,25 +62,36 @@ bindsym $mod+l exec i3lock --color "$bg-color"
 # Wallpaper
 exec --no-startup-id feh --bg-scale ~/Pictures/programmer-wallpapers.jpg
 
+exec --no-startup-id nm-applet
+
 ## exec --no-startup-id dropbox start
 
 #############################
 ####     Color scheme    ####
 #############################
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+set $base00 #eeeeee
+set $base01 #383830
+set $base02 #49483e
+set $base03 #75715e
+set $base04 #a59f85
+set $base05 #f8f8f2
+set $base06 #f5f4f1
+set $base07 #f9f8f5
+set $base08 #f92672
+set $base09 #fd971f
+set $base0A #f4bf75
+set $base0B #a6e22e
+set $base0C #a1efe4
+set $base0D #007389
+set $base0E #ae81ff
+set $base0F #cc6633
 
-
-# window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+# Window Colours            border  background  text    indicator
+client.focused              $base0D $base0D     $base00 $base01
+client.focused_inactive     $base02 $base02     $base03 $base01
+client.unfocused            $base01 $base01     $base03 $base01
+client.urgent               $base02 $base08     $base07 $base08
 
 #############################
 ### Workspace definitions ###
@@ -171,15 +182,18 @@ bindsym $mod+r mode "resize"
 ##############################
 
 bar {
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+    status_command i3blocks -c ~/.i3/i3blocks.conf
     position top
     colors {
-        background $bg-color
-	separator #757575
-	#                  border             background         text
-	focused_workspace  $bg-color          $bg-color          $text-color
-	inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-	urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+        separator   $base03
+        background  $base01
+        statusline  $base05
+
+        #                   border  background  text
+        focused_workspace   $base0C $base0D     $base00
+        active_workspace    $base02 $base02     $base07
+        inactive_workspace  $base01 $base01     $base03
+        urgent_workspace    $base08 $base08     $base07
     }
 }
 
