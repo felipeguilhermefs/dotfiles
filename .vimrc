@@ -1,30 +1,25 @@
 set nocompatible "IMproved required
 
-filetype off "required for vundle
+call plug#begin('~/.vim/plugged')
 
-"set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
 
-Plugin 'gmarik/vundle'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ctrlpvim/ctrlp.vim'
-
-call vundle#end()
+call plug#end()
 
 " ==========================================================
 " Basic Settings
 " ==========================================================
 let mapleader=";" " change the leader to be a semicolon
 
-syntax on
 filetype on
 filetype plugin indent on "plugin and indentation by filetype
+syntax on
 
+set t_Co=256
+colorscheme molokai
 
 """ Messages, Info, Status
 set vb t_vb= " Disable all bells.
@@ -86,10 +81,10 @@ autocmd Filetype gitcommit setlocal textwidth=72
 " ==========================================================
 
 " Window Jump
-map<c-j> <c-w>j
-map<c-k> <c-w>k
-map<c-l> <c-w>l
-map<c-h> <c-w>h
+map<leader>j <c-w>j
+map<leader>k <c-w>k
+map<leader>l <c-w>l
+map<leader>h <c-w>h
 
 " Buffer Control
 
@@ -101,13 +96,9 @@ map<leader>d :bd<cr>
 " Plugins
 " ==========================================================
 
-""" Solarized
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
-
 """ NERDTree
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+let NERDTreeShowHidden=1
 map <leader>t :NERDTreeToggle<CR>
 
 """ Airline
@@ -119,3 +110,4 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_working_path_mode = 'ra'
+
