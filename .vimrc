@@ -41,6 +41,7 @@ set shiftwidth=2 "the depth of autoindentation, keep the same as above
 set shiftround "indent in multiples of shiftwidth
 set softtabstop=2 " <BS> over an autoindent deletes both spaces.
 set expandtab "tabs to spaces
+set smarttab " Handle tabs more intelligently
 set linebreak " don't wrap textin the middle of a word
 set textwidth=79
 set autoindent " always set autoindenting on
@@ -70,7 +71,6 @@ set ffs=unix,dos,mac " Try recognizing dos, unix, and mac line endings.
 """ Searching and Patterns
 set ignorecase " Default to using case insensitive searches,
 set smartcase " unless uppercase letters are used in the regex.
-set smarttab " Handle tabs more intelligently
 set hlsearch " Highlight searches by default.
 set incsearch " Incrementally search while typing a /regex
 
