@@ -27,3 +27,6 @@
   smudge = git-lfs smudge %f
 [rebase]
   autostash = true
+[user]
+  name = Felipe Guilherme
+  email = felipeguilhermefs@gmail.com
