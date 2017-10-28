@@ -8,7 +8,7 @@
   ui=true
   interactive=true
 [merge]
-  tool = meld
+  tool = kdiff3
 [push]
   default = simple
 [branch]
