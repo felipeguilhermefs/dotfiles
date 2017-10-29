@@ -1,15 +1,16 @@
 export ZSH=/home/felipe/.oh-my-zsh
 
 # Theme
-ZSH_THEME="avit"
+ZSH_THEME="amuse"
 
 # Plugins
-plugins=(git)
+plugins=(git ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
 # Preferences
 export EDITOR='vim'
+export GPG_TTY=$(tty)
 
 # Aliases
 alias gc='git commit -v -S'
