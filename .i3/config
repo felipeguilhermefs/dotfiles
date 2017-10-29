@@ -11,7 +11,7 @@ bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 5%- unmute"
 bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec xterm
 
 # kill focused window
 bindsym $mod+q kill
@@ -139,7 +139,7 @@ assign [class="Firefox"] $workspace2
 hide_edge_borders both
 
 # Font to be used
-font pango:FontAwesome 11
+font pango:Monospace 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
