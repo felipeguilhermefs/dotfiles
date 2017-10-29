@@ -1,7 +1,7 @@
 export ZSH=/home/felipe/.oh-my-zsh
 
 # Theme
-ZSH_THEME="amuse"
+ZSH_THEME="af-magic"
 
 # Plugins
 plugins=(git ssh-agent)
