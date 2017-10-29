@@ -11,7 +11,7 @@ bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 5%- unmute"
 bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+q kill
@@ -182,7 +182,7 @@ bindsym $mod+r mode "resize"
 ##############################
 
 bar {
-    status_command i3blocks -c ~/.i3/i3blocks.conf
+    status_command ~/.i3/.conky-i3bar
     position top
     colors {
         separator   $base03
