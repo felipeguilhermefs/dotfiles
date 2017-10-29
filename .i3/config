@@ -52,8 +52,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # The middle button + mod over any part of the window kills the window
 bindsym --whole-window $mod+button2 kill
 
-# i3lock
-bindsym $mod+l exec i3lock --color "$bg-color"
 
 #############################
 ######  Start up app  #######
@@ -147,6 +145,9 @@ floating_modifier $mod
 
 # Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+
+# i3lock
+bindsym $mod+l exec i3lock --color "$base01"
 
 # Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
