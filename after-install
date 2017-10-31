@@ -1,0 +1,190 @@
+# Full system update
+sudo dnf update
+
+# Enable rpm repositories
+sudo rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo rpm -Uvh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+# Faster rpm downloads
+sudo vi /etc/dnf/dnf.conf
+
+## and add
+fastestmirror=true
+deltarpm=true
+
+## Optimize disk
+Enable disk i/o scheduler
+
+## Install day to day tools
+Archive formats
+Multimedia codecs
+Oracle JRE
+
+# Utilities
+sudo dnf install pavucontrol xclip htop keepass
+
+#################################################
+#############  Battery save   ###################
+#################################################
+
+# Reduce Battery Usage
+sudo dnf install tlp tlp-rdw
+sudo systemctl enable tlp 
+
+# Remove screen savers
+vi ~/.xsession
+
+### and add
+xset s off
+
+#################################################
+#############       Fonts     ###################
+#################################################
+
+# Install font awesome
+cd ~/Downloads
+wget https://codeload.github.com/FortAwesome/Font-Awesome/zip/v4.7.0
+upzip v4.70
+mkdir ~/.fonts
+mv ~/Downloads/Font-Awesome-4.7.0/fonts/fontawesome-webfont.ttf ~/.fonts/
+
+# Better font rendering
+sudo dnf copr enable dawid/better_fonts
+sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements
+
+#################################################
+#############        SSH       ##################
+#################################################
+
+# Generate
+ssh-keygen -t rsa -b 4096 -C "felipeguilhermefs@gmail.com"
+
+# Add to ssh-agent
+eval "ssh-agent"
+sh-add ~/.ssh/id_rsa
+
+# Add to github, bitbucket, etc
+xclip -sel clip < ~/.ssh/id_rsa.pub
+
+#################################################
+#############        GPG       ##################
+#################################################
+
+# Generate
+gpg --gen-key
+
+# List keys and then copy the 'sec' identifier
+#               
+# sec   4096R/3AA5C34371567BD2 2016-03-10 [expires: 2017-03-10]
+#                 ^
+#             3AA5C34371567BD2    
+gpg --list-secret-keys --keyid-format LONG
+
+# Export to a tmp file
+gpg --armor --export 3AA5C34371567BD2 > ~/.doidera
+
+# Add to github
+xclip -sel clip < ~/.doidera
+
+# Remove tmp file
+rm ~/.doidera
+
+#################################################
+#############      Dotfiles    ##################
+#################################################
+
+# make Projects directory
+mkdir ~/Projects
+
+# Clone dotfiles from github to Projects
+git clone git@github.com:felipeguilhermefs/dotfiles.git ~/Projects/dotfiles
+
+#################################################
+#############        i3      ####################
+#################################################
+
+# Install i3
+sudo dnf install i3 dmenu i3lock feh conky
+
+# Copy i3 config
+cp ~/Projects/dotfiles/.i3/.config ~/.i3/.config
+
+# Copy conky config
+cp ~/Projects/dotfiles/.i3/.conky-i3bar ~/.i3/.conky-i3bar
+cp ~/Projects/dotfiles/.i3/.conkyrc ~/.conkyrc
+
+# Remove gnome desktop
+sudo dnf autoremove @gnome-desktop
+
+##################################################
+##########       Terminal        #################
+##################################################
+
+# Install xterm
+sudo dnf install xterm
+
+# Configure xterm
+cp ~/Projects/dotfiles/.Xresources ~/.Xresources
+
+# Remove rxvt that i3 installed
+sudo dnf autoremove rxvt-unicode
+
+#################################################
+#############  File browser  ####################
+#################################################
+
+#Install thunar
+sudo dnf install thunar
+
+# Install Numix
+sudo dnf copr enable numix/numix
+sudo dnf install numix-icon-theme
+
+#################################################
+#############       VIM      ####################
+#################################################
+
+# Install vim
+sudo dnf install vim
+
+# Copy .vimrc
+cp ~/Projects/dotfiles/.vim/.vimrc ~/.vimrc
+
+# Download the plugin manager
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Copy colorscheme
+cp -R ~/Projects/dotfiles/.vim/colors ~/.vim/colors
+
+# Install plugins
+vim -c :PlugInstall
+
+################################################
+#############       ZSH      ####################
+#################################################
+
+# Install ZSH
+sudo dnf install zsh
+
+# Change shell to zsh
+chsh -s $(which zsh)
+
+# Download and install OhMyZsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Copy .zshrc
+cp ~/Projects/dotfiles/.zshrc ~/.zshrc
+
+#################################################
+###########       Dropbox      ##################
+#################################################
+
+# Install
+sudo dnf install dropbox
+
+# Start the daemon
+dropbox start -i
+
+https://fosspost.org/tutorials/things-to-do-after-installing-fedora
+http://www.linuxandubuntu.com/home/15-things-to-do-after-installing-fedora-26
+https://gist.github.com/cedced19/a94b9839db34b9873cfe5985248b0176
