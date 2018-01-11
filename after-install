@@ -44,7 +44,7 @@ xset s off
 # Install font awesome
 cd ~/Downloads
 wget https://codeload.github.com/FortAwesome/Font-Awesome/zip/v4.7.0
-upzip v4.70
+unzip v4.70
 mkdir ~/.fonts
 mv ~/Downloads/Font-Awesome-4.7.0/fonts/fontawesome-webfont.ttf ~/.fonts/
 
@@ -107,7 +107,7 @@ git clone git@github.com:felipeguilhermefs/dotfiles.git ~/Projects/dotfiles
 sudo dnf install i3 dmenu i3lock feh conky
 
 # Copy i3 config
-cp ~/Projects/dotfiles/.i3/.config ~/.i3/.config
+cp ~/Projects/dotfiles/.i3/config ~/.i3/config
 
 # Copy conky config
 cp ~/Projects/dotfiles/.i3/.conky-i3bar ~/.i3/.conky-i3bar
@@ -184,7 +184,3 @@ sudo dnf install dropbox
 
 # Start the daemon
 dropbox start -i
-
-https://fosspost.org/tutorials/things-to-do-after-installing-fedora
-http://www.linuxandubuntu.com/home/15-things-to-do-after-installing-fedora-26
-https://gist.github.com/cedced19/a94b9839db34b9873cfe5985248b0176
