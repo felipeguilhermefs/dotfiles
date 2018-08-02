@@ -21,7 +21,7 @@ Multimedia codecs
 Oracle JRE
 
 # Utilities
-sudo dnf install pavucontrol xclip htop keepass
+sudo dnf install pavucontrol xclip htop keepass redshift
 
 #################################################
 #############  Battery save   ###################
