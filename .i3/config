@@ -84,6 +84,12 @@ bindsym $mod+space focus mode_toggle
 # Disable auto focus. Click to focus
 focus_follows_mouse no
 
+# Move to scratchpad
+bindsym $mod+minus move scratchpad
+
+# Scratchpad recover
+bindsym $mod+Shift+minus scratchpad show
+
 # Enter resize mode
 bindsym $mod+r mode "resize"
 
