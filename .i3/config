@@ -235,6 +235,12 @@ bindsym $mod+$alt+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+$alt+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+$alt+0 move container to workspace $ws10; workspace $ws0
 
+#Move workspace to display at left
+bindsym $mod+$alt+Left move workspace to output left
+
+#Move workspace to display at right
+bindsym $mod+$alt+Right move workspace to output right
+
 # Apps binds
 assign [class="Gnome-terminal"] $ws1
 assign [class="Firefox"] $ws2
