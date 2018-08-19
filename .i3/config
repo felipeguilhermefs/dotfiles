@@ -5,6 +5,9 @@
 # Windows is the modifier
 set $mod Mod4
 
+# Set a alias to Alt
+set $alt Mod1
+
 # Thin borders
 hide_edge_borders both
 
@@ -208,11 +211,23 @@ bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+
+# Move focused container to workspace and switch to workspace
+bindsym $mod+$alt+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+$alt+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+$alt+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+$alt+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+$alt+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+$alt+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+$alt+7 move container to workspace 7; workspace 7
+bindsym $mod+$alt+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+$alt+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+$alt+0 move container to workspace $ws10; workspace $ws0
 
 # Apps binds
 assign [class="Gnome-terminal"] $ws1
