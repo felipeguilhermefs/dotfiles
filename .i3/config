@@ -182,8 +182,10 @@ client.urgent               $base02 $base08     $base07 $base08
 # Identifiers
 set $ws1 "1:  "
 set $ws2 "2: "
-set $ws3 "3: "
-set $ws4 "4: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: "
+set $ws6 "6: "
 set $ws8 "8: "
 set $ws9 "9: "
 set $ws10 "10: "
@@ -193,8 +195,8 @@ bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
@@ -205,7 +207,7 @@ bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace $ws8
@@ -215,7 +217,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # Apps binds
 assign [class="Gnome-terminal"] $ws1
 assign [class="Firefox"] $ws2
-assign [class="Google-chrome"] $ws4
+assign [class="Google-chrome"] $ws3
+assign [class="Thunar"] $ws6
 
 # Automatic back-and-forth where switching workspaces
 workspace_auto_back_and_forth yes
@@ -225,19 +228,19 @@ workspace_auto_back_and_forth yes
 ##############################
 
 bar {
-    status_command ~/.i3/.conky-i3bar
-    position top
-    colors {
-        separator   $base03
-        background  $base01
-        statusline  $base05
+  status_command i3status
+#  status_command ~/.i3/.conky-i3bar
+  colors {
+    separator   $base03
+    background  $base01
+    statusline  $base05
 
-        #                   border  background  text
-        focused_workspace   $base0C $base0D     $base00
-        active_workspace    $base02 $base02     $base07
-        inactive_workspace  $base01 $base01     $base03
-        urgent_workspace    $base08 $base08     $base07
-    }
+    #                   border  background  text
+    focused_workspace   $base0C $base0D     $base00
+    active_workspace    $base02 $base02     $base07
+    inactive_workspace  $base01 $base01     $base03
+    urgent_workspace    $base08 $base08     $base07
+    binding_mode        $base01 $base02     $base00
+  }
 }
-
 
