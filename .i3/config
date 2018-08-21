@@ -119,18 +119,30 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# define a mode to exit i3 and end the X session
+set $mode_exit i3: [e]xit [c]ancel
+bindsym $mod+Shift+e mode "$mode_exit"
+
+mode "$mode_exit" {
+  bindsym e exit
+
+  bindsym c mode "default"
+  bindsym Escape mode "default"
+  bindsym Return mode "default"
+}
 
 # i3lock
 bindsym $mod+b exec i3lock --color "$base01"
 
+# define a mode to choose monitor layout
 set $mode_layout Monitor Layout: [d]ouble [s]ingle
 bindsym $mod+u mode "$mode_layout"
 
 mode "$mode_layout" {
+  # defined to my home double monitor layout
   bindsym d exec "xrandr --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output eDP-1 --primary --mode 1366x768 --pos 1920x0 --rotate normal"
 
+  #defined to my home single monitor layout
   bindsym s exec "xrandr --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal"
 
   bindsym Escape mode "default"
