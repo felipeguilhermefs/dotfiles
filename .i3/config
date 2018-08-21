@@ -47,19 +47,19 @@ bindsym $mod+q kill
 bindsym --whole-window $mod+button2 kill
 
 # change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # move focused window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -123,7 +123,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # i3lock
-bindsym $mod+l exec i3lock --color "$base01"
+bindsym $mod+b exec i3lock --color "$base01"
 
 #############################
 ######     Laucher    #######
@@ -236,10 +236,10 @@ bindsym $mod+$alt+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+$alt+0 move container to workspace $ws10; workspace $ws0
 
 #Move workspace to display at left
-bindsym $mod+$alt+Left move workspace to output left
+bindsym $mod+$alt+h move workspace to output left
 
 #Move workspace to display at right
-bindsym $mod+$alt+Right move workspace to output right
+bindsym $mod+$alt+l move workspace to output right
 
 # Apps binds
 assign [class="Gnome-terminal"] $ws1
