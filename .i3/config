@@ -140,7 +140,7 @@ mode "$mode_exit" {
 bindsym $mod+b exec i3lock --color "$base01"
 
 # define a mode to choose monitor layout
-set $mode_layout Monitor Layout: [d]ouble [s]ingle [a]uto
+set $mode_layout Monitor Layout: [d]ouble [s]ingle
 bindsym $mod+u mode "$mode_layout"
 
 mode "$mode_layout" {
@@ -149,8 +149,6 @@ mode "$mode_layout" {
 
   #defined to my home single monitor layout
   bindsym s exec "xrandr --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal"
-
-  bindsym a exec "xranr --output HDMI-1 --auto --output DP-1 --auto eDP-1 --primary --auto"
 
   bindsym Escape mode "default"
   bindsym Return mode "default"
