@@ -1,41 +1,27 @@
 # Full system update
-sudo dnf update
+sudo pacman -Syu
 
-# Enable rpm repositories
-sudo rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-sudo rpm -Uvh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+# Install vim
+sudo pacman -Syu vim
 
-# Faster rpm downloads
-sudo vi /etc/dnf/dnf.conf
+# Add yaourt repo
+sudo vim /etc/pacman.conf
+# Append yaourt repo
+[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch
 
-## and add
-fastestmirror=true
-deltarpm=true
+#Install yaourt
+sudo pacman -Syu yaourt
 
-## Optimize disk
-Enable disk i/o scheduler
+#Sync yaourt with AUR
+yaourt -Syy
 
-## Install day to day tools
-Archive formats
-Multimedia codecs
-Oracle JRE
+#Update the fastest mirrors
+sudo pacman-mirrors -g
 
 # Utilities
-sudo dnf install pavucontrol xclip htop keepass redshift
-
-#################################################
-#############  Battery save   ###################
-#################################################
-
-# Reduce Battery Usage
-sudo dnf install tlp tlp-rdw
-sudo systemctl enable tlp 
-
-# Remove screen savers
-vi ~/.xsession
-
-### and add
-xset s off
+sudo pacman -Syu keepass redshift
 
 #################################################
 #############       Fonts     ###################
@@ -48,10 +34,10 @@ unzip v4.70
 mkdir ~/.fonts
 mv ~/Downloads/Font-Awesome-4.7.0/fonts/fontawesome-webfont.ttf ~/.fonts/
 
-# Better font rendering
-sudo dnf copr enable dawid/better_fonts
-sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements
-
+#Better font rendering
+sudo vim /etc/profile.d/freetype2.sh
+#Uncomment
+export FREETYPE_PROPERTIES="..."
 #################################################
 #############        SSH       ##################
 #################################################
@@ -104,7 +90,7 @@ git clone git@github.com:felipeguilhermefs/dotfiles.git ~/Projects/dotfiles
 #################################################
 
 # Install i3
-sudo dnf install i3 dmenu i3lock feh conky
+sudo pacman -Syu i3 dmenu i3lock feh conky
 
 # Copy i3 config
 cp ~/Projects/dotfiles/.i3/config ~/.i3/config
@@ -113,39 +99,22 @@ cp ~/Projects/dotfiles/.i3/config ~/.i3/config
 cp ~/Projects/dotfiles/.i3/.conky-i3bar ~/.i3/.conky-i3bar
 cp ~/Projects/dotfiles/.i3/.conkyrc ~/.conkyrc
 
-# Remove gnome desktop
-sudo dnf autoremove @gnome-desktop
-
 ##################################################
 ##########       Terminal        #################
 ##################################################
 
-# Install xterm
-sudo dnf install xterm
+# Install urxvt
+sudo pacman -Syu rxvt-unicode
 
 # Configure xterm
 cp ~/Projects/dotfiles/.Xresources ~/.Xresources
-
-# Remove rxvt that i3 installed
-sudo dnf autoremove rxvt-unicode
-
-#################################################
-#############  File browser  ####################
-#################################################
-
-#Install thunar
-sudo dnf install thunar
-
-# Install Numix
-sudo dnf copr enable numix/numix
-sudo dnf install numix-icon-theme
 
 #################################################
 #############       VIM      ####################
 #################################################
 
 # Install vim
-sudo dnf install vim
+sudo pacman -Syu vim
 
 # Copy .vimrc
 cp ~/Projects/dotfiles/.vim/.vimrc ~/.vimrc
