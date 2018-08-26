@@ -36,7 +36,7 @@ bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer
 ##############################
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec urxvt
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -145,10 +145,10 @@ bindsym $mod+u mode "$mode_layout"
 
 mode "$mode_layout" {
   # defined to my home double monitor layout
-  bindsym d exec "xrandr --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output eDP-1 --primary --mode 1366x768 --pos 1920x0 --rotate normal"
+  bindsym d exec "~/.screenlayout/double-home.sh"
 
   #defined to my home single monitor layout
-  bindsym s exec "xrandr --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal"
+  bindsym s exec "~/.screenlayout/single.sh"
 
   bindsym Escape mode "default"
   bindsym Return mode "default"
@@ -159,7 +159,7 @@ mode "$mode_layout" {
 #############################
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale ~/Pictures/programmer-wallpapers.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/manifesto.png
 
 # Wifi
 exec --no-startup-id nm-applet
@@ -255,7 +255,7 @@ bindsym $mod+$alt+h move workspace to output left
 bindsym $mod+$alt+l move workspace to output right
 
 # Apps binds
-assign [class="Gnome-terminal"] $ws1
+assign [class="URxvt"] $ws1
 assign [class="Firefox"] $ws2
 assign [class="Google-chrome"] $ws3
 assign [class="Thunar"] $ws6
