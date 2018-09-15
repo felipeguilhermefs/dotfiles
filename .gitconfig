@@ -30,3 +30,5 @@
 [user]
   name = Felipe Guilherme
   email = felipeguilhermefs@gmail.com
+[gpg]
+  program = gpg
