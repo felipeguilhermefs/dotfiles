@@ -13,6 +13,8 @@ export EDITOR='vim'
 export GPG_TTY=$(tty)
 
 # Aliases
+
+## Git
 alias gc='git commit -v -S'
 alias gc!='git commit -v -S --amend'
 alias gcmsg='git commit -S -m'
@@ -26,3 +28,7 @@ alias ggca!='git gc --aggressive --prune=now'
 alias ggrr!='git branch --no-color -r --merged | command grep -v "master\|develop\|dev" | command sed "s/origin\//:/" | xargs -n 1 git push origin'
 
 alias gbbl='git log -p -M --follow --stat -- '
+
+## SO
+alias soup='sudo pacman -Syu'
+alias socl='sudo pacman -R $(pacman -Qdtq)'
