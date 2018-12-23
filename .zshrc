@@ -8,6 +8,9 @@ plugins=(git ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
+# nvm
+source /usr/share/nvm/init-nvm.sh
+
 # Preferences
 export EDITOR='vim'
 export GPG_TTY=$(tty)
