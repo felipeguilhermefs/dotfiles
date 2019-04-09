@@ -24,6 +24,18 @@ sudo pacman-mirrors -g
 sudo pacman -Syu keepass redshift
 
 #################################################
+###########       Time/Date     #################
+#################################################
+
+# NTP
+sudo pacman -S ntp
+sudo timedatectl set-ntp true
+
+# Set Timezone
+#timedatectl list-timezones
+sudo timedatectl set-timezone America/Sao_Paulo
+
+#################################################
 #############       Fonts     ###################
 #################################################
 
