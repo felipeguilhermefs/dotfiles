@@ -33,5 +33,6 @@ alias ggrr!='git branch --no-color -r --merged | command grep -v "master\|develo
 alias gbbl='git log -p -M --follow --stat -- '
 
 ## SO
-alias soup='sudo pacman -Syu'
+alias soup='sudo pacman-mirrors --fasttrack && sudo pacman -Syyu'
 alias socl='sudo pacman -R $(pacman -Qdtq)'
+
