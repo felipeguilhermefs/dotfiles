@@ -1,55 +1,9 @@
 # Full system update
-sudo pacman -Syu
+sudo apt update && sudo apt upgrade
 
-# Install vim
-sudo pacman -Syu vim
+# Install goodies
+sudo apt install git gitk vim redshift redshift-gtk zsh dropbox
 
-# Add yaourt repo
-sudo vim /etc/pacman.conf
-# Append yaourt repo
-[archlinuxfr]
-SigLevel = Never
-Server = http://repo.archlinux.fr/$arch
-
-#Install yaourt
-sudo pacman -Syu yaourt
-
-#Sync yaourt with AUR
-yaourt -Syy
-
-#Update the fastest mirrors
-sudo pacman-mirrors -g
-
-# Utilities
-sudo pacman -Syu keepass redshift
-
-#################################################
-###########       Time/Date     #################
-#################################################
-
-# NTP
-sudo pacman -S ntp
-sudo timedatectl set-ntp true
-
-# Set Timezone
-#timedatectl list-timezones
-sudo timedatectl set-timezone America/Sao_Paulo
-
-#################################################
-#############       Fonts     ###################
-#################################################
-
-# Install font awesome
-cd ~/Downloads
-wget https://codeload.github.com/FortAwesome/Font-Awesome/zip/v4.7.0
-unzip v4.70
-mkdir ~/.fonts
-mv ~/Downloads/Font-Awesome-4.7.0/fonts/fontawesome-webfont.ttf ~/.fonts/
-
-#Better font rendering
-sudo vim /etc/profile.d/freetype2.sh
-#Uncomment
-export FREETYPE_PROPERTIES="..."
 #################################################
 #############        SSH       ##################
 #################################################
@@ -58,7 +12,7 @@ export FREETYPE_PROPERTIES="..."
 ssh-keygen -t rsa -b 4096 -C "felipeguilhermefs@gmail.com"
 
 # Add to ssh-agent
-eval "ssh-agent"
+eval "$(ssh-agent -s)"
 sh-add ~/.ssh/id_rsa
 
 # Add to github, bitbucket, etc
@@ -92,44 +46,17 @@ rm ~/.doidera
 #################################################
 
 # make Projects directory
-mkdir ~/Projects
+mkdir ~/projects
 
 # Clone dotfiles from github to Projects
 git clone git@github.com:felipeguilhermefs/dotfiles.git ~/Projects/dotfiles
 
 #################################################
-#############        i3      ####################
-#################################################
-
-# Install i3
-sudo pacman -Syu i3 dmenu i3lock feh conky
-
-# Copy i3 config
-cp ~/Projects/dotfiles/.i3/config ~/.i3/config
-
-# Copy conky config
-cp ~/Projects/dotfiles/.i3/.conky-i3bar ~/.i3/.conky-i3bar
-cp ~/Projects/dotfiles/.i3/.conkyrc ~/.conkyrc
-
-##################################################
-##########       Terminal        #################
-##################################################
-
-# Install urxvt
-sudo pacman -Syu rxvt-unicode
-
-# Configure xterm
-cp ~/Projects/dotfiles/.Xresources ~/.Xresources
-
-#################################################
 #############       VIM      ####################
 #################################################
 
-# Install vim
-sudo pacman -Syu vim
-
 # Copy .vimrc
-cp ~/Projects/dotfiles/.vim/.vimrc ~/.vimrc
+cp ~/projects/dotfiles/.vim/.vimrc ~/.vimrc
 
 # Download the plugin manager
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -144,9 +71,6 @@ vim -c :PlugInstall
 #############       ZSH      ####################
 #################################################
 
-# Install ZSH
-sudo dnf install zsh
-
 # Change shell to zsh
 chsh -s $(which zsh)
 
@@ -154,24 +78,21 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Copy .zshrc
-cp ~/Projects/dotfiles/.zshrc ~/.zshrc
+cp ~/projects/dotfiles/.zshrc ~/.zshrc
 
 #################################################
 #############       GIT      ####################
 #################################################
 
 # Copy .gitconfig
-cp ~/Projects/dotfiles/.gitconfig ~/.gitconfig
+cp ~/projects/dotfiles/.gitconfig ~/.gitconfig
 
 # Copy .gitmessage
-cp ~/Projects/dotfiles/.gitmessage ~/.gitmessage
+cp ~/projects/dotfiles/.gitmessage ~/.gitmessage
 
 #################################################
 ###########       Dropbox      ##################
 #################################################
-
-# Install
-sudo dnf install dropbox
 
 # Start the daemon
 dropbox start -i
