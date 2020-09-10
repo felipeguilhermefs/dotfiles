@@ -2,7 +2,7 @@
 sudo apt update && sudo apt upgrade
 
 # Install goodies
-sudo apt install git vim redshift redshift-gtk zsh xclip
+sudo apt install git vim redshift redshift-gtk zsh xclip curl
 
 #################################################
 #############        SSH       ##################
@@ -49,7 +49,7 @@ rm ~/.doidera
 mkdir ~/projects
 
 # Clone dotfiles from github to Projects
-git clone git@github.com:felipeguilhermefs/dotfiles.git ~/Projects/dotfiles
+git clone git@github.com:felipeguilhermefs/dotfiles.git ~/projects/dotfiles
 
 #################################################
 #############       VIM      ####################
@@ -62,7 +62,7 @@ cp ~/projects/dotfiles/.vim/.vimrc ~/.vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Copy colorscheme
-cp -R ~/Projects/dotfiles/.vim/colors ~/.vim/colors
+cp -R ~/projects/dotfiles/.vim/colors ~/.vim/colors
 
 # Install plugins
 vim -c :PlugInstall
@@ -90,9 +90,3 @@ cp ~/projects/dotfiles/.gitconfig ~/.gitconfig
 # Copy .gitmessage
 cp ~/projects/dotfiles/.gitmessage ~/.gitmessage
 
-#################################################
-###########       Dropbox      ##################
-#################################################
-
-# Start the daemon
-dropbox start -i
