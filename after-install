@@ -2,7 +2,7 @@
 sudo apt update && sudo apt upgrade
 
 # Install goodies
-sudo apt install git gitk vim redshift redshift-gtk zsh dropbox
+sudo apt install git vim redshift redshift-gtk zsh xclip
 
 #################################################
 #############        SSH       ##################
