@@ -17,8 +17,6 @@ let mapleader=";" " change the leader to be a semicolon
 filetype on
 filetype plugin indent on "plugin and indentation by filetype
 syntax enable
-
-let g:solarized_termcolors=256
 colorscheme solarized
 
 """ Messages, Info, Status
