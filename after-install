@@ -2,7 +2,7 @@
 sudo apt update && sudo apt upgrade
 
 # Install goodies
-sudo apt install git gitk curl vim redshift redshift-gtk zsh dropbox
+sudo apt install git vim redshift redshift-gtk zsh xclip curl htop
 
 #################################################
 #############        SSH       ##################
@@ -49,7 +49,7 @@ rm ~/.doidera
 mkdir ~/projects
 
 # Clone dotfiles from github to Projects
-git clone git@github.com:felipeguilhermefs/dotfiles.git ~/Projects/dotfiles
+git clone git@github.com:felipeguilhermefs/dotfiles.git ~/projects/dotfiles
 
 #################################################
 #############       VIM      ####################
@@ -90,9 +90,3 @@ cp ~/projects/dotfiles/.gitconfig ~/.gitconfig
 # Copy .gitmessage
 cp ~/projects/dotfiles/.gitmessage ~/.gitmessage
 
-#################################################
-###########       Dropbox      ##################
-#################################################
-
-# Start the daemon
-dropbox start -i

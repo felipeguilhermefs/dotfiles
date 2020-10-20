@@ -16,10 +16,8 @@ let mapleader=";" " change the leader to be a semicolon
 
 filetype on
 filetype plugin indent on "plugin and indentation by filetype
-syntax on
-
-set t_Co=256
-colorscheme molokai
+syntax enable
+colorscheme solarized
 
 """ Messages, Info, Status
 set vb t_vb= " Disable all bells.
