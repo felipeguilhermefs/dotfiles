@@ -32,3 +32,5 @@
   email = felipeguilhermefs@gmail.com
 [gpg]
   program = gpg
+[pager]
+  branch = false
