@@ -2,7 +2,7 @@
 sudo apt update && sudo apt upgrade
 
 # Install goodies
-sudo apt install git gitk vim redshift redshift-gtk zsh dropbox
+sudo apt install git gitk curl vim redshift redshift-gtk zsh dropbox
 
 #################################################
 #############        SSH       ##################
@@ -62,7 +62,7 @@ cp ~/projects/dotfiles/.vim/.vimrc ~/.vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Copy colorscheme
-cp -R ~/Projects/dotfiles/.vim/colors ~/.vim/colors
+cp -R ~/projects/dotfiles/.vim/colors ~/.vim/colors
 
 # Install plugins
 vim -c :PlugInstall
