@@ -14,6 +14,9 @@ source /usr/share/nvm/init-nvm.sh
 # Preferences
 export EDITOR='vim'
 export GPG_TTY=$(tty)
+export GOPATH=$HOME/go
+export GO_HOME=/usr/local/go
+export PATH=$PATH:$GO_HOME/bin:$GOPATH/bin
 
 # Aliases
 
