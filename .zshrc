@@ -8,9 +8,6 @@ plugins=(git ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
-# nvm
-source /usr/share/nvm/init-nvm.sh
-
 # Preferences
 export EDITOR='vim'
 export GPG_TTY=$(tty)
@@ -36,6 +33,6 @@ alias ggrr!='git branch --no-color -r --merged | command grep -v "master\|develo
 alias gbbl='git log -p -M --follow --stat -- '
 
 ## SO
-alias soup='sudo pacman-mirrors --fasttrack && sudo pacman -Syyu'
-alias socl='sudo pacman -R $(pacman -Qdtq)'
+alias soup='sudo apt update && sudo apt upgrade'
+alias socl='sudo apt autoremove'
 

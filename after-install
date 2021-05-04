@@ -2,7 +2,7 @@
 sudo apt update && sudo apt upgrade
 
 # Install goodies
-sudo apt install git vim redshift redshift-gtk zsh xclip curl htop
+sudo apt install git vim zsh xclip curl htop
 
 #################################################
 #############        SSH       ##################
