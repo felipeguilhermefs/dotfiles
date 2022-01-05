@@ -4,7 +4,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="clean"
 
 # Plugins
-plugins=(git ssh-agent)
+plugins=(git ssh-agent kubectl)
 
 source $ZSH/oh-my-zsh.sh
 source <(kubectl completion zsh)
