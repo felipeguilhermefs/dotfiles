@@ -1,37 +1,37 @@
 [alias]
-  cmp = cherry -v
-  ticket = "!sh -c 'git log $1..$2 | grep -o "\""#[0-9]\\{5\\}"\"" | sort -u' -"
+	cmp = cherry -v
+	ticket = "!sh -c 'git log $1..$2 | grep -o "\""#[0-9]\\{5\\}"\"" | sort -u' -"
 [color]
-  ui=true
-  interactive=true
+	ui=true
+	interactive=true
 [merge]
-  tool = vimdiff
+	tool = vimdiff
 [push]
-  default = simple
+	default = simple
 [pull]
-  rebase = true
+	rebase = true
 [branch]
-  autosetuprebase = always
+	autosetuprebase = always
 [core]
-  editor = vim
-  preloadindex = true
-  fscache = true
+	editor = vim
+	preloadindex = true
+	fscache = true
 [commit]
-  template = ~/.gitmessage
+	template = ~/.gitmessage
 [gc]
-  auto = 256
+	auto = 256
 [filter "lfs"]
-  required = true
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
 [rebase]
-  autostash = true
+	autostash = true
 [user]
-  name = Felipe Flores
-  email = felipeguilhermefs@gmail.com
+	name = Felipe Flores
+	email = felipeguilhermefs@gmail.com
 [gpg]
-  program = gpg
+	program = gpg
 [pager]
-  branch = false
+	branch = false
 [init]
 	defaultBranch = main
