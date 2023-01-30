@@ -1,16 +1,15 @@
 [alias]
   cmp = cherry -v
-  lg = log --oneline --decorate
-  tree = log --oneline --decorate --graph
-  undo = reset --hard
   ticket = "!sh -c 'git log $1..$2 | grep -o "\""#[0-9]\\{5\\}"\"" | sort -u' -"
 [color]
   ui=true
   interactive=true
 [merge]
-  tool = kdiff3
+  tool = vimdiff
 [push]
   default = simple
+[pull]
+  rebase = true
 [branch]
   autosetuprebase = always
 [core]
@@ -28,9 +27,11 @@
 [rebase]
   autostash = true
 [user]
-  name = Felipe Guilherme
+  name = Felipe Flores
   email = felipeguilhermefs@gmail.com
 [gpg]
   program = gpg
 [pager]
   branch = false
+[init]
+	defaultBranch = main
