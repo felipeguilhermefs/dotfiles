@@ -27,44 +27,44 @@ alias gprev='git checkout -'
 
 # Kubernetes
 kscale() {
-    if [ -z ${1+x} ]
-        then
-            echo "Service name is needed"
-            exit 1
-    fi
+	if [ -z ${1+x} ]
+		then
+			echo "Service name is needed"
+			exit 1
+	fi
 
-    if [ -z ${2+x} ]
-        then
-            echo "Number of replicas is needed"
-            exit 1
-    fi
+	if [ -z ${2+x} ]
+		then
+			echo "Number of replicas is needed"
+			exit 1
+	fi
 
-    kubectl scale deploy $1 --replicas $2
+	kubectl scale deploy $1 --replicas $2
 }
 
 kpod() {
-    if [ -z ${1+x} ]
-        then
-            echo "Pod name is needed"
-            exit 1
-    fi
+	if [ -z ${1+x} ]
+		then
+			echo "Pod name is needed"
+			exit 1
+	fi
 
-    kubectl get pods | grep "$1"
+	kubectl get pods | grep "$1"
 }
 
 ktail() {
-    if [ -z ${1+x} ]
-        then
-            echo "Pod name is needed"
-            exit 1
-    fi
+	if [ -z ${1+x} ]
+		then
+			echo "Pod name is needed"
+			exit 1
+	fi
 
-    if [ -z ${2+x} ]
-        then
-            kubectl logs $(kpod "$1" | tail -1 | awk '{print $1}')
-        else
-            kubectl logs --tail $2 $(kpod "$1" | tail -1 | awk '{print $1}')
-    fi
+	if [ -z ${2+x} ]
+		then
+			kubectl logs $(kpod "$1" | tail -1 | awk '{print $1}')
+		else
+			kubectl logs --tail $2 $(kpod "$1" | tail -1 | awk '{print $1}')
+	fi
 }
 
 ## Maven
@@ -76,13 +76,13 @@ alias dw="cd $HOME/Downloads"
 alias proj="cd $HOME/Projects"
 
 kill-port() {
-    if [ -z ${1+x} ]
-        then
-            echo "Port is unset"
-        else
-            PORT=${1}
-            lsof -Pn | grep ":$PORT" | awk '{print $2}' | xargs kill -9
-            echo "The service running on port $PORT was killed!"
-    fi
+	if [ -z ${1+x} ]
+		then
+			echo "Port is unset"
+		else
+			PORT=${1}
+			lsof -Pn | grep ":$PORT" | awk '{print $2}' | xargs kill -9
+			echo "The service running on port $PORT was killed!"
+	fi
 }
 
