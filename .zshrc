@@ -86,16 +86,3 @@ kill-port() {
     fi
 }
 
-# Go
-export GOPATH="$HOME/go"
-export GO_HOME="/usr/local/go"
-export PATH="$PATH:$GO_HOME/bin:$GOPATH/bin"
-
-# pyenv
-export PIPENV_VENV_IN_PROJECT=1
-export PIPENV_IGNORE_VIRTUALENV=1
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
