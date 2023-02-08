@@ -67,6 +67,22 @@ ktail() {
 	fi
 }
 
+## Redis
+rdelk() {
+  if [ -z ${1+x} ]
+    then
+      echo "Need a pattern"
+      exit 1
+  fi
+
+  if [ -z ${2+x} ]
+    then
+      redis-cli KEYS "$1" | xargs redis-cli DEL
+    else
+      redis-cli -h $2 KEYS "$1" | xargs redis-cli -h $2 DEL
+  fi
+}
+
 ## Maven
 alias mvntree="mvn dependency:tree"
 alias mvnpristine="mvn dependency:purge-local-repository"
