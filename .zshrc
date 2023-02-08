@@ -77,9 +77,9 @@ rdelk() {
 
   if [ -z ${2+x} ]
     then
-      redis-cli KEYS "$1" | xargs redis-cli DEL
+      redis-cli KEYS "$1" | xargs redis-cli UNLINK
     else
-      redis-cli -h $2 KEYS "$1" | xargs redis-cli -h $2 DEL
+      redis-cli -h $2 KEYS "$1" | xargs redis-cli -h $2 UNLINK
   fi
 }
 
