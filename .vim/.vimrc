@@ -1,14 +1,5 @@
 set nocompatible "IMproved required
 
-call plug#begin('~/.vim/plugged')
-
-Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ctrlpvim/ctrlp.vim'
-
-call plug#end()
-
 " ==========================================================
 " Basic Settings
 " ==========================================================
@@ -17,7 +8,6 @@ let mapleader=";" " change the leader to be a semicolon
 filetype on
 filetype plugin indent on "plugin and indentation by filetype
 syntax enable
-colorscheme solarized
 
 """ Messages, Info, Status
 set vb t_vb= " Disable all bells.
@@ -90,20 +80,6 @@ map<leader>n :bn<cr>
 map<leader>p :bp<cr>
 map<leader>d :bd<cr>
 
-" ==========================================================
-" Plugins
-" ==========================================================
-
-""" NERDTree
-let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
-let NERDTreeShowHidden=1
-map <leader>t :NERDTreeToggle<CR>
-
-""" Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='badwolf'
-
-"" CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
