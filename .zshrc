@@ -9,6 +9,13 @@ plugins=(git ssh-agent kubectl golang)
 source $ZSH/oh-my-zsh.sh
 source <(kubectl completion zsh)
 
+# Fuck
+eval $(thefuck --alias)
+
+# Fuzzy Finder
+eval "$(fzf --zsh)"
+export FZF_DEFAULT_OPTS="--height 40% --no-mouse --cycle --preview 'bat --style numbers,changes --color=always {} | head -100' "
+
 # Preferences
 export EDITOR='vim'
 export SYSTEM_VERSION_COMPAT=1
@@ -24,22 +31,6 @@ alias ggca!='git gc --aggressive --prune=now'
 alias ggrr!='git branch --no-color -r --merged | command grep -v "master\|develop\|dev" | command sed "s/origin\//:/" | xargs -n 1 git push origin'
 alias gbbl='git log -p -M --follow --stat -- '
 alias gprev='git checkout -'
-
-## Redis
-rdelk() {
-  if [ -z ${1+x} ]
-    then
-      echo "Need a pattern"
-      exit 1
-  fi
-
-  if [ -z ${2+x} ]
-    then
-      redis-cli KEYS "$1" | xargs redis-cli UNLINK
-    else
-      redis-cli -h $2 KEYS "$1" | xargs redis-cli -h $2 UNLINK
-  fi
-}
 
 ## Misc
 alias dw="cd $HOME/Downloads"
