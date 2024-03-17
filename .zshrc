@@ -1,13 +1,12 @@
 export ZSH=~/.oh-my-zsh
 
 # Theme
-ZSH_THEME="af-magic"
+ZSH_THEME="avit"
 
 # Plugins
-plugins=(git ssh-agent kubectl golang)
+plugins=(git ssh-agent golang zsh-autosuggestions zsh-syntax-highlighting web-search)
 
 source $ZSH/oh-my-zsh.sh
-source <(kubectl completion zsh)
 
 # Fuck
 eval $(thefuck --alias)
