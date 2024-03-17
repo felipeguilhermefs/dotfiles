@@ -21,6 +21,7 @@ eval $(thefuck --alias)
 # Fuzzy Finder
 eval "$(fzf --zsh)"
 export FZF_DEFAULT_OPTS="--height 40% --no-mouse --cycle --preview 'bat --style numbers,changes --color=always {} | head -100' "
+export FZF_COMPLETION_TRIGGER='#'
 
 # Preferences
 export EDITOR='vim'
