@@ -20,8 +20,12 @@ eval $(thefuck --alias)
 
 # Fuzzy Finder
 eval "$(fzf --zsh)"
-export FZF_DEFAULT_OPTS="--height 40% --no-mouse --cycle --preview 'bat --style numbers,changes --color=always {} | head -100' "
+export FZF_DEFAULT_OPTS="-m --height 40% --no-mouse --cycle --preview 'bat --style numbers,changes --color=always {} | head -100' "
 export FZF_COMPLETION_TRIGGER='#'
+
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+fi
 
 # Preferences
 export EDITOR='vim'

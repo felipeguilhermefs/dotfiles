@@ -1,6 +1,16 @@
 set nocompatible "IMproved required
 
 " ==========================================================
+" Plugins
+" ==========================================================
+call plug#begin()
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'jremmen/vim-ripgrep'
+
+call plug#end()
+
+" ==========================================================
 " Basic Settings
 " ==========================================================
 let mapleader=";" " change the leader to be a semicolon
