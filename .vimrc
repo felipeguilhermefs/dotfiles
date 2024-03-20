@@ -5,6 +5,7 @@ set nocompatible "IMproved required
 " ==========================================================
 call plug#begin()
 
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'jremmen/vim-ripgrep'
 
@@ -49,7 +50,7 @@ set nospell
 
 """ Moving Around/Editing
 set virtualedit=block " Let cursor move past the last char in <C-v> mode
-set nu "add line numbers
+set relativenumber number
 set scrolloff=3 " Keep 3 context lines above and below the cursor
 set cursorline " have a line indicate the cursor location
 set splitbelow " Horizontal splits open below current file
@@ -66,6 +67,7 @@ set ignorecase " Default to using case insensitive searches,
 set smartcase " unless uppercase letters are used in the regex.
 set hlsearch " Highlight searches by default.
 set incsearch " Incrementally search while typing a /regex
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow " Replace grep with RipGrep
 
 " ==========================================================
 " Typed Config
@@ -90,8 +92,7 @@ map<leader>n :bn<cr>
 map<leader>p :bp<cr>
 map<leader>d :bd<cr>
 
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_working_path_mode = 'ra'
-
+" FuzzyFinder File Search
+nnoremap <silent> <C-o> :Files<CR>
+" RipGrep Search in File
+nnoremap <silent> <C-f> :Rg<CR>
