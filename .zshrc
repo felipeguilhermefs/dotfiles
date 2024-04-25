@@ -39,10 +39,6 @@ alias ggrr!='git branch --no-color -r --merged | command grep -v "master\|develo
 alias gbbl='git log -p -M --follow --stat -- '
 alias gprev='git checkout -'
 
-## Misc
-alias dw="cd $HOME/Downloads"
-alias proj="cd $HOME/Projects"
-
 kill-port() {
 	if [ -z ${1+x} ]
 		then
