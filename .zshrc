@@ -11,7 +11,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Plugins
-plugins=(git ssh-agent golang zsh-autosuggestions zsh-syntax-highlighting web-search)
+plugins=(git gitfast ssh-agent golang zsh-autosuggestions zsh-syntax-highlighting web-search)
 
 source $ZSH/oh-my-zsh.sh
 
