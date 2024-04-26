@@ -1,92 +1,12 @@
-# Full system update
-sudo apt update && sudo apt upgrade
-
-# Install goodies
-sudo apt install git vim zsh xclip curl htop
-
-#################################################
-#############        SSH       ##################
-#################################################
-
-# Generate
-ssh-keygen -t rsa -b 4096 -C "felipeguilhermefs@gmail.com"
-
-# Add to ssh-agent
-eval "$(ssh-agent -s)"
-sh-add ~/.ssh/id_rsa
-
-# Add to github, bitbucket, etc
-xclip -sel clip < ~/.ssh/id_rsa.pub
-
-#################################################
-#############        GPG       ##################
-#################################################
-
-# Generate
-gpg --gen-key
-
-# List keys and then copy the 'sec' identifier
-#               
-# sec   4096R/3AA5C34371567BD2 2016-03-10 [expires: 2017-03-10]
-#                 ^
-#             3AA5C34371567BD2    
-gpg --list-secret-keys --keyid-format LONG
-
-# Export to a tmp file
-gpg --armor --export 3AA5C34371567BD2 > ~/.doidera
-
-# Add to github
-xclip -sel clip < ~/.doidera
-
-# Remove tmp file
-rm ~/.doidera
-
-#################################################
-#############      Dotfiles    ##################
-#################################################
-
-# make Projects directory
-mkdir ~/projects
-
-# Clone dotfiles from github to Projects
-git clone git@github.com:felipeguilhermefs/dotfiles.git ~/projects/dotfiles
-
-#################################################
-#############       VIM      ####################
-#################################################
-
-# Copy .vimrc
-cp ~/projects/dotfiles/.vim/.vimrc ~/.vimrc
-
-# Download the plugin manager
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# Copy colorscheme
-cp -R ~/projects/dotfiles/.vim/colors ~/.vim/colors
-
-# Install plugins
-vim -c :PlugInstall
-
-################################################
-#############       ZSH      ####################
-#################################################
-
-# Change shell to zsh
-chsh -s $(which zsh)
-
-# Download and install OhMyZsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-# Copy .zshrc
-cp ~/projects/dotfiles/.zshrc ~/.zshrc
-
-#################################################
-#############       GIT      ####################
-#################################################
-
-# Copy .gitconfig
-cp ~/projects/dotfiles/.gitconfig ~/.gitconfig
-
-# Copy .gitmessage
-cp ~/projects/dotfiles/.gitmessage ~/.gitmessage
+- Homebrew
+- Git
+- SSH Keys
+- GPG Keys
+- Oh My Zsh
+- PowerLevel10k
+- Bat
+- FuzzyFinder
+- RipGrep
+- TheFuck
+- dotfiles
 
