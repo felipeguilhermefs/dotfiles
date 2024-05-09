@@ -24,9 +24,11 @@ export FZF_DEFAULT_OPTS="--height 40% --no-mouse --cycle --preview 'bat --style 
 export FZF_COMPLETION_TRIGGER='#'
 
 # Preferences
-export EDITOR='vim'
+export EDITOR='nvim'
 
-# Git
+# Aliases
+
+## Git
 alias ggc='git gc'
 alias ggc!='git gc --prune=now'
 alias ggca='git gc --aggressive'
@@ -34,6 +36,11 @@ alias ggca!='git gc --aggressive --prune=now'
 alias ggrr!='git branch --no-color -r --merged | command grep -v "master\|develop\|dev" | command sed "s/origin\//:/" | xargs -n 1 git push origin'
 alias gbbl='git log -p -M --follow --stat -- '
 alias gprev='git checkout -'
+
+## General
+alias vim='nvim'
+alias vi='nvim'
+alias code='nvim'
 
 kill-port() {
 	if [ -z ${1+x} ]
