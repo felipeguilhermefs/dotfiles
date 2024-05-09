@@ -23,12 +23,7 @@ eval "$(fzf --zsh)"
 export FZF_DEFAULT_OPTS="--height 40% --no-mouse --cycle --preview 'bat --style numbers,changes --color=always {} | head -100' "
 export FZF_COMPLETION_TRIGGER='#'
 
-# Preferences
-export EDITOR='nvim'
-
-# Aliases
-
-## Git
+# Git
 alias ggc='git gc'
 alias ggc!='git gc --prune=now'
 alias ggca='git gc --aggressive'
@@ -37,7 +32,8 @@ alias ggrr!='git branch --no-color -r --merged | command grep -v "master\|develo
 alias gbbl='git log -p -M --follow --stat -- '
 alias gprev='git checkout -'
 
-## General
+# Editor
+export EDITOR='nvim'
 alias vim='nvim'
 alias vi='nvim'
 alias code='nvim'
