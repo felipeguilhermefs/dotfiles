@@ -3,8 +3,6 @@ set nocompatible "IMproved required
 " ==========================================================
 " Basic Settings
 " ==========================================================
-let mapleader=";" " change the leader to be a semicolon
-
 filetype on
 filetype plugin indent on "plugin and indentation by filetype
 syntax enable
@@ -19,16 +17,9 @@ set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
 
 """ Format
-set tabstop=2 "how many spaces a tab take
-set shiftwidth=2 "the depth of autoindentation, keep the same as above
-set shiftround "indent in multiples of shiftwidth
-set softtabstop=2 " <BS> over an autoindent deletes both spaces.
-set expandtab "tabs to spaces
-set smarttab " Handle tabs more intelligently
 set linebreak " don't wrap textin the middle of a word
 set textwidth=79
 set autoindent " always set autoindenting on
-set smartindent " use smart indent if there is no indent file
 set matchpairs+=<:> " show matching <> (html mainly) as well
 set foldmethod=indent " allow us to fold on indents
 set foldlevel=99 " don't fold by default
@@ -39,7 +30,6 @@ set nospell
 
 """ Moving Around/Editing
 set virtualedit=block " Let cursor move past the last char in <C-v> mode
-set nu "add line numbers
 set scrolloff=3 " Keep 3 context lines above and below the cursor
 set cursorline " have a line indicate the cursor location
 set splitbelow " Horizontal splits open below current file
@@ -54,8 +44,6 @@ set ffs=unix,dos,mac " Try recognizing dos, unix, and mac line endings.
 """ Searching and Patterns
 set ignorecase " Default to using case insensitive searches,
 set smartcase " unless uppercase letters are used in the regex.
-set hlsearch " Highlight searches by default.
-set incsearch " Incrementally search while typing a /regex
 
 " ==========================================================
 " Typed Config
@@ -79,9 +67,4 @@ map<leader>h <c-w>h
 map<leader>n :bn<cr>
 map<leader>p :bp<cr>
 map<leader>d :bd<cr>
-
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_working_path_mode = 'ra'
 
