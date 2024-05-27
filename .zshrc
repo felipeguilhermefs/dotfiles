@@ -1,6 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -22,8 +19,12 @@ eval $(thefuck --alias)
 
 # Fuzzy Finder
 eval "$(fzf --zsh)"
-export FZF_DEFAULT_OPTS="--height 40% --no-mouse --cycle --preview 'bat --style numbers,changes --color=always {} | head -100' "
+export FZF_DEFAULT_OPTS="-m --height 40% --no-mouse --cycle --preview 'bat --style numbers,changes --color=always {} | head -100' "
 export FZF_COMPLETION_TRIGGER='#'
+
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+fi
 
 # Git
 alias ggc='git gc'
@@ -36,9 +37,10 @@ alias gprev='git checkout -'
 
 # Editor
 export EDITOR='nvim'
-alias vim='nvim'
-alias vi='nvim'
-alias code='nvim'
+alias vim="$EDITOR"
+alias vi="$EDITOR"
+alias code="$EDITOR"
+
 ### Vim Motions to Terminal
 bindkey -v '^?' backward-delete-char
 
