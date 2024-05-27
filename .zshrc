@@ -15,6 +15,8 @@ plugins=(git gitfast ssh-agent golang zsh-autosuggestions zsh-syntax-highlightin
 
 source $ZSH/oh-my-zsh.sh
 
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
 # Fuck
 eval $(thefuck --alias)
 
