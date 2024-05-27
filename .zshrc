@@ -37,6 +37,8 @@ export EDITOR='nvim'
 alias vim='nvim'
 alias vi='nvim'
 alias code='nvim'
+### Vim Motions to Terminal
+bindkey -v '^?' backward-delete-char
 
 kill-port() {
 	if [ -z ${1+x} ]
