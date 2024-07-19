@@ -17,15 +17,6 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # Fuck
 eval $(thefuck --alias)
 
-# Fuzzy Finder
-eval "$(fzf --zsh)"
-export FZF_DEFAULT_OPTS="-m --height 40% --no-mouse --cycle --preview 'bat --style numbers,changes --color=always {} | head -100' "
-export FZF_COMPLETION_TRIGGER='#'
-
-if type rg &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files'
-fi
-
 # Git
 alias ggc='git gc'
 alias ggc!='git gc --prune=now'
@@ -57,3 +48,12 @@ kill-port() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Fuzzy Finder
+source <(fzf --zsh)
+export FZF_DEFAULT_OPTS="-m --height 40% --walker-skip .git,node_modules,target --no-mouse --cycle --preview 'bat --style numbers,changes --color=always {} | head -100' "
+
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+fi
+
