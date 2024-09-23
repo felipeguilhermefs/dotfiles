@@ -3,6 +3,9 @@
 	interactive=true
 [merge]
 	tool = vimdiff
+	conflictstyle = diff3
+[diff]
+	colorMoved = default
 [push]
 	default = simple
 [pull]
@@ -13,6 +16,7 @@
 	editor = vim
 	preloadindex = true
 	fscache = true
+	pager = delta
 [commit]
 	template = ~/.gitmessage
 [gc]
@@ -34,3 +38,7 @@
 	defaultBranch = main
 [commit]
 	gpgsign = true
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true    # use n and N to move between diff sections
