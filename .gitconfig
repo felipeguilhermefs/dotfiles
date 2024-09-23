@@ -1,44 +1,43 @@
+[branch]
+	autosetuprebase = always
 [color]
 	ui=true
 	interactive=true
-[merge]
-	tool = vimdiff
-	conflictstyle = diff3
-[diff]
-	colorMoved = default
-[push]
-	default = simple
-[pull]
-	rebase = true
-[branch]
-	autosetuprebase = always
+[commit]
+	template = ~/.gitmessage
+	gpgsign = true
 [core]
 	editor = vim
 	preloadindex = true
 	fscache = true
 	pager = delta
-[commit]
-	template = ~/.gitmessage
-[gc]
-	auto = 256
+[delta]
+	navigate = true    # use n and N to move between diff sections
+[diff]
+	colorMoved = default
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
+[gc]
+	auto = 256
+[gpg]
+	program = gpg
+[init]
+	defaultBranch = main
+[interactive]
+	diffFilter = delta --color-only
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[pager]
+	branch = false
+[pull]
+	rebase = true
+[push]
+	default = simple
 [rebase]
 	autostash = true
 [user]
 	name = Felipe Flores
 	email = felipeguilhermefs@gmail.com
-[gpg]
-	program = gpg
-[pager]
-	branch = false
-[init]
-	defaultBranch = main
-[commit]
-	gpgsign = true
-[interactive]
-	diffFilter = delta --color-only
-[delta]
-	navigate = true    # use n and N to move between diff sections
