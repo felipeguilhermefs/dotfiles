@@ -32,6 +32,9 @@ alias vim="$EDITOR"
 alias vi="$EDITOR"
 alias code="$EDITOR"
 
+# Remaps
+alias ls="lsd"
+
 ### Vim Motions to Terminal
 bindkey -v '^?' backward-delete-char
 

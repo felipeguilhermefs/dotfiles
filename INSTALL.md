@@ -9,5 +9,6 @@
 - [RipGrep](https://github.com/BurntSushi/ripgrep)
 - [TheFuck](https://github.com/nvbn/thefuck)
 - [Git Delta](https://github.com/dandavison/delta)
+- [LSD](https://github.com/lsd-rs/lsd)
 - [dotfiles](https://github.com/felipeguilhermefs/dotfiles)
 
