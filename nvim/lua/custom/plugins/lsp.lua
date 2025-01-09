@@ -123,7 +123,9 @@ return {
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     local servers = {
-      gopls = {},
+      gopls = {
+        gofumpt = true,
+      },
 
       lua_ls = {
         settings = {
@@ -134,16 +136,18 @@ return {
           },
         },
       },
-
-      stylua = {},
     }
 
     require('mason').setup()
 
+    local formatters = { 'gofumpt', 'stylua' }
+
+    local servers_and_formatters = vim.tbl_keys(servers)
+    vim.list_extend(servers_and_formatters, formatters)
+
     require('mason-tool-installer').setup {
-      ensure_installed = vim.tbl_keys(servers),
-      start_delay = 3000, -- 3 second delay
-      debounce_hours = 5, -- at least 5 hours between attempts to install/update
+      ensure_installed = servers_and_formatters,
+      debounce_hours = 8, -- at least 8 hours between attempts to install/update
     }
 
     require('mason-lspconfig').setup {
@@ -151,8 +155,7 @@ return {
         function(server_name)
           local server = servers[server_name] or {}
           -- This handles overriding only values explicitly passed
-          -- by the server configuration above. Useful when disabling
-          -- certain features of an LSP (for example, turning off formatting for tsserver)
+          -- by the server configuration above.
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
           require('lspconfig')[server_name].setup(server)
         end,
