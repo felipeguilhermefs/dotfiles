@@ -125,10 +125,6 @@ return {
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     local servers = {
-      gopls = {
-        gofumpt = true,
-      },
-
       lua_ls = {
         settings = {
           Lua = {
@@ -138,11 +134,13 @@ return {
           },
         },
       },
+
+      zls = {},
     }
 
     require('mason').setup()
 
-    local formatters = { 'gofumpt', 'stylua' }
+    local formatters = { 'stylua' }
 
     local servers_and_formatters = vim.tbl_keys(servers)
     vim.list_extend(servers_and_formatters, formatters)
