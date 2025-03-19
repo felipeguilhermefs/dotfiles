@@ -33,6 +33,7 @@ return { -- QoL plugins
     { '<leader>sk', function() Snacks.picker.keymaps() end, desc = '> [S]earch [K]eymaps' },
     { '<leader>sq', function() Snacks.picker.qflist() end, desc = '> [S]earch [Q]uickfix List' },
     { '<leader>sm', function() Snacks.picker.marks() end, desc = '> [S]earch [M]arks' },
+    { '<leader>st', function() Snacks.picker.todo_comments() end, desc = '> [S]earch [T]odo Comments' },
     -- Git
     { '<leader>gb', function() Snacks.picker.git_branches() end, desc = "> [G]it [B]ranches" },
     { '<leader>gl', function() Snacks.picker.git_log() end, desc = "> [G]it [L]og" },
