@@ -1,22 +1,3 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-export ZSH=~/.oh-my-zsh
-
-# Theme
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Plugins
-plugins=(git gitfast ssh-agent golang zsh-autosuggestions zsh-syntax-highlighting web-search)
-
-source $ZSH/oh-my-zsh.sh
-
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-
-# Fuck
-eval $(thefuck --alias)
-
 # Git
 alias ggc='git gc'
 alias ggc!='git gc --prune=now'
@@ -32,7 +13,6 @@ alias vim="$EDITOR"
 alias vi="$EDITOR"
 alias code="$EDITOR"
 
-# Remaps
 alias ls="lsd"
 
 ### Vim Motions to Terminal
@@ -48,9 +28,6 @@ kill-port() {
 			echo "The service running on port $PORT was killed!"
 	fi
 }
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Fuzzy Finder
 source <(fzf --zsh)
