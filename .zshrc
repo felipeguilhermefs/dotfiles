@@ -1,3 +1,16 @@
+# Pure
+fpath+=(/opt/homebrew/share/zsh/site-functions)
+autoload -U promptinit; promptinit
+prompt pure
+
+# Completions
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qNmh-24) ]]; then
+  compinit -C
+else
+  compinit
+fi
+
 # Git
 alias ggc='git gc'
 alias ggc!='git gc --prune=now'
@@ -28,6 +41,11 @@ kill-port() {
 			echo "The service running on port $PORT was killed!"
 	fi
 }
+
+# Plugins
+source ~/.config/zsh/fzf-tab/fzf-tab.plugin.zsh
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Fuzzy Finder
 source <(fzf --zsh)
