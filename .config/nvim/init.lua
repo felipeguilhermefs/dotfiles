@@ -93,6 +93,9 @@ vim.keymap.set('n', '<leader>wk', '<C-w><C-k>', { desc = 'Move focus to the uppe
 vim.keymap.set('n', '<leader>wp', '<C-w><C-p>', { desc = 'Move focus to previous window' })
 vim.keymap.set('n', '<leader>wt', '<C-w>T', { desc = 'Move current window to a new tab' })
 
+-- Quickfix
+vim.keymap.set('n', ']]', '<cmd>cnext<CR>', { silent = true })
+vim.keymap.set('n', '[[', '<cmd>cprev<CR>', { silent = true })
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
