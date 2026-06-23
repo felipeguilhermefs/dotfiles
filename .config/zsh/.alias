@@ -49,3 +49,12 @@ alias gstd='git stash drop'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 
+
+# Neovim
+alias vi="$EDITOR"
+alias vim="$EDITOR"
+alias code="$EDITOR"
+
+# Remaps
+alias ls="lsd"
+

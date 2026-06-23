@@ -1,0 +1,32 @@
+# Lazy load 'kubectl'
+kubectl() {
+	command kubectl "$@"
+	local ret=$?
+	if [[ -z $KUBECTL_COMPLETE ]]; then
+		source <(command kubectl completion zsh)
+		KUBECTL_COMPLETE=1
+	fi
+	return $ret
+}
+
+
+# Lazy load 'nvm'
+nvm() {
+	unset -f nvm
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+	nvm "$@"
+}
+
+#Kill anything on a given port
+kill-port() {
+	if [ -z ${1+x} ]
+		then
+			echo "Port is unset"
+		else
+			PORT=${1}
+			lsof -Pn | grep ":$PORT" | awk '{print $2}' | xargs kill -9
+			echo "The service running on port $PORT was killed!"
+	fi
+}
+
