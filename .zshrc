@@ -26,7 +26,7 @@ fi
 export K9S_SKIN="nightfox"
 export EDITOR='nvim'
 export NVM_DIR="$HOME/.nvm"
-export FZF_DEFAULT_OPTS="-m --height 40% --walker-skip .git,node_modules,target --no-mouse --cycle --preview 'bat --style numbers,changes --color=always {} | head -100' "
+export FZF_DEFAULT_OPTS="-m --height 40% --walker-skip .git,node_modules,target --no-mouse --cycle --preview 'bat --style numbers,changes --color=always --line-range=:100 {}'"
 
 
 # Editor

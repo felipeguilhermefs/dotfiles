@@ -1,3 +1,9 @@
+#LSD
+alias l='lsd -l'
+alias la='lsd -la'
+alias ls='lsd -a'
+alias ltree='lsd --tree'
+
 # Git
 alias g='git'
 alias ga='git add'
@@ -49,12 +55,8 @@ alias gstd='git stash drop'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 
-
-# Neovim
+# NeoVIM
 alias vi="$EDITOR"
 alias vim="$EDITOR"
 alias code="$EDITOR"
-
-# Remaps
-alias ls="lsd"
 
