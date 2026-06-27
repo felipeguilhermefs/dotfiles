@@ -1,0 +1,13 @@
+brew 'zsh'
+brew 'jq'
+brew 'pure'
+brew 'fzf'
+brew 'ripgrep'
+brew 'bat'
+brew 'git-delta'
+brew 'hyperfine'
+brew 'lua'
+brew 'luajit'
+brew 'luarocks'
+brew 'neovim'
+
