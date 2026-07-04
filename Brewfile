@@ -10,4 +10,5 @@ brew 'lua'
 brew 'luajit'
 brew 'luarocks'
 brew 'neovim'
+brew 'btop'
 
