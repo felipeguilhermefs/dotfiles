@@ -60,3 +60,5 @@ alias vi="$EDITOR"
 alias vim="$EDITOR"
 alias code="$EDITOR"
 
+# Podman
+alias pod='podman'
