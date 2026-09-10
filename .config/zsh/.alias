@@ -1,3 +1,10 @@
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+
+#Brew
+alias brewup='brew update && brew upgrade --yes && brew autoremove && brew cleanup'
+
 #LSD
 alias l='lsd -l'
 alias la='lsd -la'
@@ -13,7 +20,7 @@ alias gb='git branch'
 alias gba='git branch --all'
 alias gbd='git branch --delete'
 alias gbD='git branch --delete --force'
-alias gbda='git branch --no-color --merged | command grep -vE "^([+*]|\s*(main|main-fff)\s*$)" | command xargs git branch --delete 2>/dev/null'
+alias gbda='git branch --no-color --merged | command grep -vE "^([+*]|\s*(main|master)\s*$)" | command xargs git branch --delete 2>/dev/null'
 alias gbm='git branch --move'
 alias gbr='git branch --remote'
 alias gc='git commit --verbose'
@@ -33,7 +40,7 @@ alias ggc='git gc'
 alias ggc!='git gc --prune=now'
 alias ggca='git gc --aggressive'
 alias ggca!='git gc --aggressive --prune=now'
-alias ggrr!='git branch --no-color -r --merged | command grep -v "master\|main\|main-fff" | command sed "s/origin\//:/" | xargs -n 1 git push origin'
+alias ggrr!='git branch --no-color -r --merged | command grep -v "master\|main" | command sed "s/origin\//:/" | xargs -n 1 git push origin'
 alias gl='git pull'
 alias glg='git log --stat'
 alias glo='git log --oneline --decorate'

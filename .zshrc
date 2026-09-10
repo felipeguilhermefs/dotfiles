@@ -23,6 +23,8 @@ else
 	compinit
 fi
 
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE='20'
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
 export K9S_SKIN="nightfox"
 export EDITOR='nvim'
 export NVM_DIR="$HOME/.nvm"
