@@ -1,6 +1,6 @@
 shell-integration = zsh
 font-family = JetBrains Mono
-theme = TokyoNight
+theme = Dracula
 
 keybind = ctrl+s>h=new_split:left
 keybind = ctrl+s>j=new_split:down
